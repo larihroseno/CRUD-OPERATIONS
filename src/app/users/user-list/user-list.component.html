@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-primary pull-right"(click)="openModalAdd(add)">Add</button>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Suggestion</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{user.name}}</td>
+                        <td>{{user.suggestion}}</td>
+                        <td>
+                            <button class="btn btn-warning">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<ng-template #add>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <label for="name">Name</label>
+      <input type="text" class="form-control" name="name"[(ngModel)]="user.name">
+      
+      <p class="text-danger">{{errorMsg.name}}</p>
+
+      <label for="suggestion">Suggestion</label>
+      <input type="text" class="form-control" name="suggestion"[(ngModel)]="user.suggestion">
+      <p class="text-danger">{{errorMsg.suggestion}}</p>
+
+<button class="btn btn-primary" (click)="onSave()">Save</button>
+    </form>
+    </div>
+  </ng-template>

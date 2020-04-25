@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: darkgreen;
+}
+
+#container{
+    background-color: white;
+    
+
+}
+
+header {
+    background-color: #EEEEEE;
+    color: rgb(37, 146, 37);
+    
+}
+
+
+
+
+
+
+h1{
+    color: darkgreen;
+
+     
+}
+
+
+
+h3, h4{
+    color: rgb(37, 146, 37);
+}
+
+
+
+
