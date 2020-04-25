@@ -3,7 +3,7 @@ var path= require("path");
 var bodyParser = require ('body-parser'); 
 var mongo=require("mongoose");
 
-var db = mongo.connect("mongodb://localhost:27017/Project-CA2", function(err,response){
+var db = mongo.connect("mongodb+srv://CRUD:crud1234@cluster0-xhmv2.mongodb.net/test?retryWrites=true&w=majority", function(err,response){
 
   
 
@@ -47,7 +47,7 @@ res.send(err);
 
 app.post("/api/UpdateUser", function(req, res){
     var mod = new model (req.body);
-    model.findByIdAndUpdate(req.body._id, {name:req.body.name, suggestion: req.body.address},
+    model.findByIdAndUpdate(req.body._id, {name:req.body.name, suggestion: req.body.suggestion},
         function(err, data){
         if(err){
 res.send(err);
@@ -60,7 +60,7 @@ res.send(err);
 })
 
 app.post("/api/deleteUser", function(req, res){
-    //var mod = new model (req.body);
+   
     model.remove({_id: req.body.id}, function(err, data){
         if(err){
 res.send(err);
@@ -73,7 +73,7 @@ res.send(err);
 })
 
 app.get("/api/getUser", function(req, res){
-    //var mod = new model (req.body);
+    
     model.find({}, function(err, data){
         if(err){
 res.send(err);
