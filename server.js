@@ -3,15 +3,12 @@ var path= require("path");
 var bodyParser = require ('body-parser'); 
 var mongo=require("mongoose");
 
-var db = mongo.connect("mongodb+srv://CRUD:crud1234@cluster0-xhmv2.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true,
-useUnifiedTopology: true
-})
-.then(() => {
-  console.log("Connected to the database!");
-})
-.catch(err => {
-  console.log("Cannot connect to the database!", err);
-  process.exit();
+var db = mongo.connect("mongodb+srv://CRUD:crud1234@cluster0-xhmv2.mongodb.net/test?retryWrites=true&w=majority", function(err,response){
+
+  
+
+if(err){ console.log(err);}
+else{ console.log('Connected to' +db, ' + ', response);}
 });
 
 var app = express()
