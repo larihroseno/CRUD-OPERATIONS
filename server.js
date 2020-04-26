@@ -3,7 +3,7 @@ var path= require("path");
 var bodyParser = require ('body-parser'); 
 var mongo=require("mongoose");
 
-var db = mongo.connect("mongodb+srv://CRUD:projectcrud1234@cluster0-xhmv2.mongodb.net/test?retryWrites=true&w=majority", {
+var db = mongo.connect("mongodb+srv://CRUD:crud1234@cluster0-xhmv2.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
