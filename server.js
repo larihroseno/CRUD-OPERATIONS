@@ -2,8 +2,10 @@ var express = require ('express');
 var path= require("path");
 var bodyParser = require ('body-parser'); 
 var mongo=require("mongoose");
+require("dotenv").config();
 
-var db = mongo.connect("mongodb+srv://CRUD:crud1234@cluster0-xhmv2.mongodb.net/test?retryWrites=true&w=majority", {
+
+var db = mongo.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
